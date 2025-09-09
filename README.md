@@ -23,3 +23,8 @@ These boards support 4 different addresses, thus, 4 is the max without multiplex
 - Resistor divider network. Recommend 1% tolerance resistors or better. Needed for stepping down voltage inputs to 0 - 3.3V to not damage your ADC. 
 
 The R values are up to you; I recommend planning for 18-20V spikes on a 12.8V battery; over 24V is overkill unless you have a special case: so that will be a factor of 0.165, or something like R1 = 10k; R2 = 2.2k to regulate up to 18V safely. I also recommend surface mount components, and I will be assuming you can solder. I will provide a PCB file that will assume one of the larger SMD sizes, like 2512 or similar (something a human can solder with tweezers). You will need a pair of resistors per input. 
+
+### WARNING/DISCLAIMER
+Using the ADC is dangerous if there is a fault in either hardware or code. By using this software, you acknowlege the risks and agree that I am not responsible for any damage caused.
+
+That said, I recommend only using the inputs for non-critical applications. Examples of what NOT to use it for would include crank and cam shaft sensors, vehicle speed sensor (VSS), accelerator position sensor (e-throttle), throttle position sensor (TPS), etc - anything life threatening if it were to fail or misinterpret a read. 
